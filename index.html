@@ -34,6 +34,8 @@ sup{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--accent)}
 .affil{margin-top:.75rem;font-size:.9rem;color:var(--muted-fg)}
 nav{margin-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
 nav span{display:inline-flex;align-items:center;min-height:48px;border:1px dashed var(--border);background:var(--card);border-radius:.6rem;padding:.5rem 1.25rem;font-size:.95rem;font-weight:500;color:var(--muted-fg)}
+nav a{display:inline-flex;align-items:center;min-height:48px;border:1px solid var(--border);background:var(--card);border-radius:.6rem;padding:.5rem 1.25rem;font-size:.95rem;font-weight:500;color:var(--primary);text-decoration:none;box-shadow:var(--panel)}nav a:hover{border-color:var(--accent);color:var(--accent)}
+.terms{margin-top:1rem;font-size:.9rem;color:var(--muted-fg)}
 nav span small{margin-left:.4rem;font-family:"IBM Plex Mono",monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
 section{padding:2.5rem 0}
 section+section{border-top:1px solid var(--border)}
@@ -53,7 +55,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;fon
   .head{padding:6rem 0 3.5rem}
   h1{font-size:3rem;line-height:1.15}
   .authors{font-size:1.125rem}.affil{font-size:1rem}
-  nav span{min-height:52px;padding:.5rem 1.75rem;font-size:1rem}
+  nav a,nav span{min-height:52px;padding:.5rem 1.75rem;font-size:1rem}
   section{padding:4rem 0}h2{font-size:1.875rem}
   .lead{font-size:1.125rem;line-height:1.78}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -68,12 +70,17 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;fon
   <h1><span class="grad">Characterizing</span> an On-Device Depth-Aware Multimodal Workload in Assistive Navigation for Blind and Low-Vision Users</h1>
   <ul class="authors"><li>Aydin Ayanzadeh<sup>1</sup></li><li>Tim Oates<sup>1</sup></li></ul>
   <p class="affil"><sup>1</sup> University of Maryland, Baltimore County</p>
-  <nav aria-label="Paper resources"><span>Paper<small>soon</small></span><span>Code<small>soon</small></span><span>Dataset<small>soon</small></span></nav>
+  <nav aria-label="Paper resources"><a href="https://www.researchgate.net/publication/413766052_Characterizing_an_On-Device_Depth-Aware_Multimodal_Workload_in_Assistive_Navigation_for_Blind_and_Low-Vision_Users" target="_blank" rel="noreferrer">Paper</a><span>Code<small>soon</small></span><span>Dataset<small>soon</small></span></nav>
 </div></header>
 <main class="wrap">
   <section>
+    <h2>Abstract</h2>
+    <p class="lead">Assistive navigation systems increasingly combine perception and generative AI to provide real-time guidance for blind and low-vision users. While multimodal pipelines enable richer scene understanding, their end-to-end performance characteristics on resource-constrained edge systems are poorly characterized. We characterize an on-device multimodal inference pipeline that localizes obstacles, estimates their metric distances, and uses a multimodal language model (MLLM) to generate navigation guidance. We decompose the pipeline into inference stages and quantify latency, energy, and performance trade-offs across multiple models and configurations. Our measurements show that language decoding dominates end-to-end latency for most models, while the perception front end contributes only a small fraction of execution time. We further show that simplifying the perception front end does not necessarily improve responsiveness, as reduced scene structure can increase output tokens and shift overhead to language decoding. Finally, our findings show that end-to-end characterization is necessary for assistive navigation systems: controlling output tokens, decoding efficiency, and pipeline organization can matter more than simplifying the perception front end.</p>
+    <p class="terms"><strong>Index Terms</strong> &mdash; assistive navigation, edge inference, monocular depth estimation, vision&ndash;language models, workload characterization</p>
+  </section>
+  <section>
     <h2>Overview</h2>
-    <p class="lead">This work characterizes an on-device, depth-aware multimodal workload that supports assistive navigation for blind and low-vision users. The full abstract, paper, and code will be posted here.</p>
+    <p class="lead">At a glance: what the study measures and where it runs.</p>
     <div class="grid">
       <article class="card"><span class="step">FOCUS</span><h3>Assistive navigation</h3><p>Helping blind and low-vision users move through their surroundings.</p></article>
       <article class="card"><span class="step">WORKLOAD</span><h3>Depth-aware multimodal</h3><p>A pipeline that combines depth sensing with multimodal understanding.</p></article>
