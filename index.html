@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Characterizing an On-Device Depth-Aware Multimodal Workload in Assistive Navigation for Blind and Low-Vision Users | IISWC 2026</title>
+<meta name="description" content="Aydin Ayanzadeh and Tim Oates. Characterizing an on-device, depth-aware multimodal workload for assistive navigation for blind and low-vision users. IISWC 2026, Boulder, CO." />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Characterizing an On-Device Depth-Aware Multimodal Workload in Assistive Navigation" />
+<meta property="og:description" content="IISWC 2026, Boulder, CO. Aydin Ayanzadeh and Tim Oates." />
+<meta name="twitter:card" content="summary" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:oklch(0.98 0.006 230);--fg:oklch(0.21 0.03 250);--card:#fff;
+  --primary:oklch(0.27 0.06 255);--muted-fg:oklch(0.48 0.03 245);
+  --border:oklch(0.9 0.015 235);--accent:oklch(0.56 0.12 200);
+  --secondary:oklch(0.95 0.015 225);
+  --panel:0 1px 2px oklch(0.2 0.04 250 / .06),0 12px 32px -12px oklch(0.2 0.04 250 / .2);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+.wrap{max-width:56rem;margin:0 auto;padding:0 1rem;min-width:0}
+header{border-bottom:1px solid var(--border);background:linear-gradient(180deg,oklch(0.95 0.03 215),var(--bg))}
+.head{text-align:center;padding:2.5rem 0 2rem}
+.eyebrow{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.22em;color:var(--accent);border:1px solid var(--accent);border-radius:9999px;padding:.3rem .9rem}
+h1{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:1.875rem;line-height:1.25;color:var(--primary);margin-top:1.5rem;overflow-wrap:break-word}
+h1 .grad{background:linear-gradient(100deg,oklch(0.5 0.13 250),oklch(0.66 0.12 190));-webkit-background-clip:text;background-clip:text;color:transparent}
+.authors{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;margin-top:1.5rem;font-size:1rem}
+.authors li{font-weight:500}
+sup{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--accent)}
+.affil{margin-top:.75rem;font-size:.9rem;color:var(--muted-fg)}
+nav{margin-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+nav span{display:inline-flex;align-items:center;min-height:48px;border:1px dashed var(--border);background:var(--card);border-radius:.6rem;padding:.5rem 1.25rem;font-size:.95rem;font-weight:500;color:var(--muted-fg)}
+nav span small{margin-left:.4rem;font-family:"IBM Plex Mono",monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+section{padding:2.5rem 0}
+section+section{border-top:1px solid var(--border)}
+h2{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:1.5rem;color:var(--primary);display:flex;align-items:center;gap:.6rem}
+h2::before{content:"";width:.5rem;height:1.4rem;border-radius:2px;background:var(--accent)}
+.lead{margin-top:1.25rem;font-size:1rem;line-height:1.75;color:var(--muted-fg)}
+.grid{margin-top:1.75rem;display:grid;gap:1.25rem;grid-template-columns:minmax(0,1fr)}
+.card{border:1px solid var(--border);border-top:3px solid var(--accent);background:var(--card);border-radius:.5rem;padding:1.25rem;box-shadow:var(--panel);min-width:0}
+.step{font-family:"IBM Plex Mono",monospace;font-size:.75rem;letter-spacing:.2em;color:var(--accent)}
+.card h3{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:1.25rem;color:var(--primary);margin-top:.5rem}
+.card p{margin-top:.5rem;font-size:1rem;color:var(--muted-fg)}
+pre{margin-top:1.5rem;max-width:100%;overflow-x:auto;border:1px solid var(--border);border-radius:.5rem;background:var(--secondary);padding:1.25rem;font-family:"IBM Plex Mono",monospace;font-size:.75rem;line-height:1.7;color:var(--primary)}
+pre:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.8rem;color:var(--muted-fg)}
+@media(min-width:640px){
+  .wrap{padding:0 2rem}
+  .head{padding:6rem 0 3.5rem}
+  h1{font-size:3rem;line-height:1.15}
+  .authors{font-size:1.125rem}.affil{font-size:1rem}
+  nav span{min-height:52px;padding:.5rem 1.75rem;font-size:1rem}
+  section{padding:4rem 0}h2{font-size:1.875rem}
+  .lead{font-size:1.125rem;line-height:1.78}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card{padding:1.5rem}.card h3{font-size:1.5rem}
+  pre,footer{font-size:.875rem}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap head">
+  <p class="eyebrow">IISWC 2026 &middot; Boulder, CO</p>
+  <h1><span class="grad">Characterizing</span> an On-Device Depth-Aware Multimodal Workload in Assistive Navigation for Blind and Low-Vision Users</h1>
+  <ul class="authors"><li>Aydin Ayanzadeh<sup>1</sup></li><li>Tim Oates<sup>1</sup></li></ul>
+  <p class="affil"><sup>1</sup> University of Maryland, Baltimore County</p>
+  <nav aria-label="Paper resources"><span>Paper<small>soon</small></span><span>Code<small>soon</small></span><span>Dataset<small>soon</small></span></nav>
+</div></header>
+<main class="wrap">
+  <section>
+    <h2>Overview</h2>
+    <p class="lead">This work characterizes an on-device, depth-aware multimodal workload that supports assistive navigation for blind and low-vision users. The full abstract, paper, and code will be posted here.</p>
+    <div class="grid">
+      <article class="card"><span class="step">FOCUS</span><h3>Assistive navigation</h3><p>Helping blind and low-vision users move through their surroundings.</p></article>
+      <article class="card"><span class="step">WORKLOAD</span><h3>Depth-aware multimodal</h3><p>A pipeline that combines depth sensing with multimodal understanding.</p></article>
+      <article class="card"><span class="step">PLATFORM</span><h3>On-device</h3><p>Runs locally on the device rather than relying on the cloud.</p></article>
+      <article class="card"><span class="step">VENUE</span><h3>IISWC 2026</h3><p>IEEE International Symposium on Workload Characterization, Boulder, CO.</p></article>
+    </div>
+  </section>
+  <section>
+    <h2>BibTeX</h2>
+<pre tabindex="0" aria-label="BibTeX citation">@inproceedings{ayanzadeh2026characterizing,
+  title     = {Characterizing an On-Device Depth-Aware Multimodal Workload in
+               Assistive Navigation for Blind and Low-Vision Users},
+  author    = {Ayanzadeh, Aydin and Oates, Tim},
+  booktitle = {IEEE International Symposium on Workload Characterization (IISWC)},
+  address   = {Boulder, CO, USA},
+  year      = {2026}
+}</pre>
+  </section>
+</main>
+<footer>To appear at IISWC 2026, Boulder, CO.</footer>
+</body>
+</html>
